@@ -1,0 +1,12 @@
+[
+    {
+        "Name": " FlexboxLayout ",
+        "License": " Apache License ",
+        "License File": " LICENSE ",
+        "Version Number": " v2.0.1 ",
+        "Upstream URL": " https://github.com/google/flexbox-layout ",
+        "Description": "  FlexboxLayout is a library project which brings the similar capabilities of CSS Flexible Box Layout Module to openharmony.
+                          In the flex layout model, the children of a flex container can be laid out in any direction, and can “flex” their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent.
+                          Both horizontal and vertical alignment of the children can be easily manipulated. "
+    }
+]

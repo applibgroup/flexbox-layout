@@ -1,0 +1,55 @@
+{
+  "app": {
+    "bundleName": "com.example.harmony.flexbox",
+    "vendor": "huawei",
+    "version": {
+      "code": 1000000,
+      "name": "1.0"
+    },
+    "apiVersion": {
+      "compatible": 5,
+      "target": 5,
+      "releaseType": "Release"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.example.ohos.flexbox",
+    "name": "com.example.ohos.flexbox.playground.MyApplication",
+    "reqCapabilities": [
+      "video_support"
+    ],
+    "deviceType": [
+      "phone",
+      "tablet"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry",
+      "installationFree" : true
+    },
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "unspecified",
+        "formsEnabled": true,
+        "name": "com.example.ohos.flexbox.playground.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "$string:app_name",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DependentLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent">
+
+    <com.google.ohos.flexbox.FlexboxLayout
+        ohos:id="$+id:flexbox"
+        ohos:height="match_parent"
+        ohos:width="match_parent">
+
+        <Text
+            ohos:id="$+id:text_1"
+            ohos:height="80vp"
+            ohos:width="120vp"
+            ohos:background_element="$graphic:flex_item_background"
+            ohos:text_alignment="center"
+            ohos:text="1"
+            ohos:text_size="20fp" />
+
+        <Text
+            ohos:id="$+id:text_2"
+            ohos:height="80vp"
+            ohos:width="160vp"
+            ohos:background_element="$graphic:flex_item_background"
+            ohos:text_alignment="center"
+            ohos:text="2"
+            ohos:text_size="20fp" />
+
+        <Text
+            ohos:id="$+id:text_3"
+            ohos:height="80vp"
+            ohos:width="120vp"
+            ohos:background_element="$graphic:flex_item_background"
+            ohos:text_alignment="center"
+            ohos:text="3"
+            ohos:text_size="20fp" />
+
+    </com.google.ohos.flexbox.FlexboxLayout>
+
+    <DirectionalLayout
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:align_parent_end="true"
+        ohos:align_parent_bottom="true"
+        ohos:padding="15vp"
+        ohos:orientation="vertical">
+
+        <Button
+            ohos:id="$+id:btn_add"
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:padding="10vp"
+            ohos:text="Add"
+            ohos:text_size="16fp"
+            ohos:text_color="#FFFFFF"
+            ohos:background_element="$graphic:button_background" />
+
+        <Button
+            ohos:id="$+id:btn_remove"
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:padding="10vp"
+            ohos:top_margin="10vp"
+            ohos:text="Remove"
+            ohos:text_size="16fp"
+            ohos:text_color="#FFFFFF"
+            ohos:background_element="$graphic:button_background" />
+    </DirectionalLayout>
+</DependentLayout>
