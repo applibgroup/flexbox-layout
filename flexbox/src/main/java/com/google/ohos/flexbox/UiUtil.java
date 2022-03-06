@@ -57,7 +57,7 @@ public class UiUtil extends ComponentContainer {
         int resultSize = 0;
         int resultMode = 0;
 
-        switch (specMode) {
+            switch (specMode) {
             // Parent has imposed an exact size on us
             case EstimateSpec.PRECISE:
                 if (childDimension >= 0) {
@@ -112,6 +112,9 @@ public class UiUtil extends ComponentContainer {
                     resultMode = EstimateSpec.UNCONSTRAINT;
                 }
                 break;
+
+                default:
+                    break;
         }
         //noinspection ResourceType
         return EstimateSpec.getSizeWithMode(resultSize, resultMode);
@@ -205,7 +208,7 @@ public class UiUtil extends ComponentContainer {
 
         @Override
         public void unmarshallingEx(Parcel in) throws ParcelException {
-
+            //TODO
         }
     }
 }

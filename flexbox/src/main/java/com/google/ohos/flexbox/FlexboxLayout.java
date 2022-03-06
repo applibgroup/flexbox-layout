@@ -218,18 +218,54 @@ public class FlexboxLayout extends ComponentContainer implements FlexContainer, 
     private FlexboxHelper.FlexLinesResult mFlexLinesResult = new FlexboxHelper.FlexLinesResult();
 
     // custom attributes
-    private static final String flexDirection = "flexDirection";
-    private static final String flexWrap = "flexWrap";
-    private static final String justifyContent = "justifyContent";
-    private static final String alignItems = "alignItems";
-    private static final String alignContent = "alignContent";
-    private static final String maxLine = "maxLine";
-    private static final String dividerDrawable = "dividerDrawable";
-    private static final String dividerDrawableHorizontal = "dividerDrawableHorizontal";
-    private static final String dividerDrawableVertical = "dividerDrawableVertical";
-    private static final String showDivider = "showDivider";
-    private static final String showDividerVertical = "showDividerVertical";
-    private static final String showDividerHorizontal = "showDividerHorizontal";
+    private static final String FLEX_DIRECTION = "flexDirection";
+    private static final String FLEX_WRAP = "flexWrap";
+    private static final String JUSTIFY_CONTENT = "justifyContent";
+    private static final String ALIGN_ITEMS = "alignItems";
+    private static final String ALIGN_CONTENT = "alignContent";
+    private static final String MAX_LINE = "maxLine";
+    private static final String DIVIDER_DRAWABLE = "dividerDrawable";
+    private static final String DIVIDER_DRAWABLE_HORIZONTAL = "dividerDrawableHorizontal";
+    private static final String DIVIDER_DRAWABLE_VERTICAL = "dividerDrawableVertical";
+    private static final String SHOW_DIVIDER = "showDivider";
+    private static final String SHOW_DIVIDER_VERTICAL = "showDividerVertical";
+    private static final String SHOW_DIVIDER_HORIZONTAL = "showDividerHorizontal";
+
+
+    private void flexAttrSet(AttrSet attrSet){
+        Element drawable = attrSet.getAttr(DIVIDER_DRAWABLE).isPresent() ?
+                attrSet.getAttr(DIVIDER_DRAWABLE).get().getElement() : null;
+        if (drawable != null) {
+            setDividerDrawableHorizontal(drawable);
+            setDividerDrawableVertical(drawable);
+        }
+        Element drawableHorizontal = attrSet.getAttr(DIVIDER_DRAWABLE_HORIZONTAL).isPresent() ?
+                attrSet.getAttr(DIVIDER_DRAWABLE_HORIZONTAL).get().getElement() : null;
+        if (drawableHorizontal != null) {
+            setDividerDrawableHorizontal(drawableHorizontal);
+        }
+        Element drawableVertical = attrSet.getAttr(DIVIDER_DRAWABLE_VERTICAL).isPresent() ?
+                attrSet.getAttr(DIVIDER_DRAWABLE_VERTICAL).get().getElement() : null;
+        if (drawableVertical != null) {
+            setDividerDrawableVertical(drawableVertical);
+        }
+        int dividerMode = attrSet.getAttr(SHOW_DIVIDER).isPresent() ?
+                attrSet.getAttr(SHOW_DIVIDER).get().getIntegerValue() : SHOW_DIVIDER_NONE.getValue();
+        if (dividerMode != SHOW_DIVIDER_NONE.getValue()) {
+            mShowDividerVertical = DividerMode.findByValue(dividerMode);
+            mShowDividerHorizontal = DividerMode.findByValue(dividerMode);
+        }
+        int dividerModeVertical = attrSet.getAttr(SHOW_DIVIDER_VERTICAL).isPresent() ?
+                attrSet.getAttr(SHOW_DIVIDER_VERTICAL).get().getIntegerValue() : SHOW_DIVIDER_NONE.getValue();
+        if (dividerModeVertical != SHOW_DIVIDER_NONE.getValue()) {
+            mShowDividerVertical = DividerMode.findByValue(dividerModeVertical);
+        }
+        int dividerModeHorizontal = attrSet.getAttr(SHOW_DIVIDER_HORIZONTAL).isPresent() ?
+                attrSet.getAttr(SHOW_DIVIDER_HORIZONTAL).get().getIntegerValue() : SHOW_DIVIDER_NONE.getValue();
+        if (dividerModeHorizontal != SHOW_DIVIDER_NONE.getValue()) {
+            mShowDividerHorizontal = DividerMode.findByValue(dividerModeHorizontal);
+        }
+    }
 
     public FlexboxLayout(Context context) {
         this(context, null);
@@ -242,53 +278,23 @@ public class FlexboxLayout extends ComponentContainer implements FlexContainer, 
     public FlexboxLayout(Context context, AttrSet attrSet, String styleName) {
         super(context, attrSet, styleName);
 
-        mFlexDirection = FlexDirection.findByValue(attrSet.getAttr(flexDirection).isPresent() ?
-                attrSet.getAttr(flexDirection).get().getIntegerValue() : 0);
-        mFlexWrap = FlexWrap.findByValue(attrSet.getAttr(flexWrap).isPresent() ?
-                attrSet.getAttr(flexWrap).get().getIntegerValue() : 0);
-        mJustifyContent = JustifyContent.findByValue(attrSet.getAttr(justifyContent).isPresent() ?
-                attrSet.getAttr(justifyContent).get().getIntegerValue() : 0);
-        mAlignItems = AlignItems.findByValue(attrSet.getAttr(alignItems).isPresent() ?
-                attrSet.getAttr(alignItems).get().getIntegerValue() : 0);
-        mAlignContent = AlignContent.findByValue(attrSet.getAttr(alignContent).isPresent() ?
-                attrSet.getAttr(alignContent).get().getIntegerValue() : 0);
-        mMaxLine = attrSet.getAttr(maxLine).isPresent() ?
-                attrSet.getAttr(maxLine).get().getIntegerValue() : NOT_SET;
-        Element drawable = attrSet.getAttr(dividerDrawable).isPresent() ?
-                attrSet.getAttr(dividerDrawable).get().getElement() : null;
-        if (drawable != null) {
-            setDividerDrawableHorizontal(drawable);
-            setDividerDrawableVertical(drawable);
-        }
-        Element drawableHorizontal = attrSet.getAttr(dividerDrawableHorizontal).isPresent() ?
-                attrSet.getAttr(dividerDrawableHorizontal).get().getElement() : null;
-        if (drawableHorizontal != null) {
-            setDividerDrawableHorizontal(drawableHorizontal);
-        }
-        Element drawableVertical = attrSet.getAttr(dividerDrawableVertical).isPresent() ?
-                attrSet.getAttr(dividerDrawableVertical).get().getElement() : null;
-        if (drawableVertical != null) {
-            setDividerDrawableVertical(drawableVertical);
-        }
-        int dividerMode = attrSet.getAttr(showDivider).isPresent() ?
-                attrSet.getAttr(showDivider).get().getIntegerValue() : SHOW_DIVIDER_NONE.getValue();
-        if (dividerMode != SHOW_DIVIDER_NONE.getValue()) {
-            mShowDividerVertical = DividerMode.findByValue(dividerMode);
-            mShowDividerHorizontal = DividerMode.findByValue(dividerMode);
-        }
-        int dividerModeVertical = attrSet.getAttr(showDividerVertical).isPresent() ?
-                attrSet.getAttr(showDividerVertical).get().getIntegerValue() : SHOW_DIVIDER_NONE.getValue();
-        if (dividerModeVertical != SHOW_DIVIDER_NONE.getValue()) {
-            mShowDividerVertical = DividerMode.findByValue(dividerModeVertical);
-        }
-        int dividerModeHorizontal = attrSet.getAttr(showDividerHorizontal).isPresent() ?
-                attrSet.getAttr(showDividerHorizontal).get().getIntegerValue() : SHOW_DIVIDER_NONE.getValue();
-        if (dividerModeHorizontal != SHOW_DIVIDER_NONE.getValue()) {
-            mShowDividerHorizontal = DividerMode.findByValue(dividerModeHorizontal);
-        }
+        mFlexDirection = FlexDirection.findByValue(attrSet.getAttr(FLEX_DIRECTION).isPresent() ?
+                attrSet.getAttr(FLEX_DIRECTION).get().getIntegerValue() : 0);
+        mFlexWrap = FlexWrap.findByValue(attrSet.getAttr(FLEX_WRAP).isPresent() ?
+                attrSet.getAttr(FLEX_WRAP).get().getIntegerValue() : 0);
+        mJustifyContent = JustifyContent.findByValue(attrSet.getAttr(JUSTIFY_CONTENT).isPresent() ?
+                attrSet.getAttr(JUSTIFY_CONTENT).get().getIntegerValue() : 0);
+        mAlignItems = AlignItems.findByValue(attrSet.getAttr(ALIGN_ITEMS).isPresent() ?
+                attrSet.getAttr(ALIGN_ITEMS).get().getIntegerValue() : 0);
+        mAlignContent = AlignContent.findByValue(attrSet.getAttr(ALIGN_CONTENT).isPresent() ?
+                attrSet.getAttr(ALIGN_CONTENT).get().getIntegerValue() : 0);
+        mMaxLine = attrSet.getAttr(MAX_LINE).isPresent() ?
+                attrSet.getAttr(MAX_LINE).get().getIntegerValue() : NOT_SET;
+        flexAttrSet(attrSet);
         addDrawTask(this);
         setLayoutRefreshedListener(this);
     }
+
 
     private void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         if (mOrderCache == null) {
@@ -1631,38 +1637,38 @@ public class FlexboxLayout extends ComponentContainer implements FlexContainer, 
         private boolean mWrapBefore;
 
         //custom attributes
-        private static final String layout_order = "layout_order";
-        private static final String layout_flexGrow = "layout_flexGrow";
-        private static final String layout_flexShrink = "layout_flexShrink";
-        private static final String layout_alignSelf = "layout_alignSelf";
-        private static final String layout_flexBasisPercent = "layout_flexBasisPercent";
-        private static final String layout_minWidth = "layout_minWidth";
-        private static final String layout_minHeight = "layout_minHeight";
-        private static final String layout_maxWidth = "layout_maxWidth";
-        private static final String layout_maxHeight = "layout_maxHeight";
-        private static final String layout_wrapBefore = "layout_wrapBefore";
+        private static final String LAYOUT_ORDER = "layout_order";
+        private static final String LAYOUT_FLEX_GROW = "layout_flexGrow";
+        private static final String LAYOUT_FLEX_SHRINK = "layout_flexShrink";
+        private static final String LAYOUT_ALIGN_SELF = "layout_alignSelf";
+        private static final String LAYOUT_FLEX_BASIS_PERCENT = "layout_flexBasisPercent";
+        private static final String LAYOUT_MIN_WIDTH = "layout_minWidth";
+        private static final String LAYOUT_MIN_HEIGHT = "layout_minHeight";
+        private static final String LAYOUT_MAX_WIDTH = "layout_maxWidth";
+        private static final String LAYOUT_MAX_HEIGHT = "layout_maxHeight";
+        private static final String LAYOUT_WRAP_BEFORE = "layout_wrapBefore";
 
         public LayoutConfig(Context context, AttrSet attrSet) {
             super(context, attrSet);
-            mOrder = attrSet.getAttr(layout_order).isPresent() ?
-                    attrSet.getAttr(layout_order).get().getIntegerValue() : ORDER_DEFAULT;
-            mFlexGrow = attrSet.getAttr(layout_flexGrow).isPresent() ?
-                    attrSet.getAttr(layout_flexGrow).get().getFloatValue() : FLEX_GROW_DEFAULT;
-            mFlexShrink = attrSet.getAttr(layout_flexShrink).isPresent() ?
-                    attrSet.getAttr(layout_flexShrink).get().getFloatValue() : FLEX_SHRINK_DEFAULT;
-            mAlignSelf = AlignSelf.findByValue(attrSet.getAttr(layout_alignSelf).isPresent() ?
-                    attrSet.getAttr(layout_alignSelf).get().getIntegerValue() : AlignSelf.AUTO.getValue());
-            mFlexBasisPercent = attrSet.getAttr(layout_flexBasisPercent).isPresent() ?
-                    attrSet.getAttr(layout_flexBasisPercent).get().getFloatValue() : FLEX_BASIS_PERCENT_DEFAULT;
-            mMinWidth = attrSet.getAttr(layout_minWidth).isPresent() ?
-                    attrSet.getAttr(layout_minWidth).get().getDimensionValue() : NOT_SET;
-            mMinHeight = attrSet.getAttr(layout_minHeight).isPresent() ?
-                    attrSet.getAttr(layout_minHeight).get().getDimensionValue() : NOT_SET;
-            mMaxWidth = attrSet.getAttr(layout_maxWidth).isPresent() ?
-                    attrSet.getAttr(layout_maxWidth).get().getDimensionValue() : MAX_SIZE;
-            mMaxHeight = attrSet.getAttr(layout_maxHeight).isPresent() ?
-                    attrSet.getAttr(layout_maxHeight).get().getDimensionValue() : MAX_SIZE;
-            mWrapBefore = attrSet.getAttr(layout_wrapBefore).isPresent() && attrSet.getAttr(layout_wrapBefore).get().getBoolValue();
+            mOrder = attrSet.getAttr(LAYOUT_ORDER).isPresent() ?
+                    attrSet.getAttr(LAYOUT_ORDER).get().getIntegerValue() : ORDER_DEFAULT;
+            mFlexGrow = attrSet.getAttr(LAYOUT_FLEX_GROW).isPresent() ?
+                    attrSet.getAttr(LAYOUT_FLEX_GROW).get().getFloatValue() : FLEX_GROW_DEFAULT;
+            mFlexShrink = attrSet.getAttr(LAYOUT_FLEX_SHRINK).isPresent() ?
+                    attrSet.getAttr(LAYOUT_FLEX_SHRINK).get().getFloatValue() : FLEX_SHRINK_DEFAULT;
+            mAlignSelf = AlignSelf.findByValue(attrSet.getAttr(LAYOUT_ALIGN_SELF).isPresent() ?
+                    attrSet.getAttr(LAYOUT_ALIGN_SELF).get().getIntegerValue() : AlignSelf.AUTO.getValue());
+            mFlexBasisPercent = attrSet.getAttr(LAYOUT_FLEX_BASIS_PERCENT).isPresent() ?
+                    attrSet.getAttr(LAYOUT_FLEX_BASIS_PERCENT).get().getFloatValue() : FLEX_BASIS_PERCENT_DEFAULT;
+            mMinWidth = attrSet.getAttr(LAYOUT_MIN_WIDTH).isPresent() ?
+                    attrSet.getAttr(LAYOUT_MIN_WIDTH).get().getDimensionValue() : NOT_SET;
+            mMinHeight = attrSet.getAttr(LAYOUT_MIN_HEIGHT).isPresent() ?
+                    attrSet.getAttr(LAYOUT_MIN_HEIGHT).get().getDimensionValue() : NOT_SET;
+            mMaxWidth = attrSet.getAttr(LAYOUT_MAX_WIDTH).isPresent() ?
+                    attrSet.getAttr(LAYOUT_MAX_WIDTH).get().getDimensionValue() : MAX_SIZE;
+            mMaxHeight = attrSet.getAttr(LAYOUT_MAX_HEIGHT).isPresent() ?
+                    attrSet.getAttr(LAYOUT_MAX_HEIGHT).get().getDimensionValue() : MAX_SIZE;
+            mWrapBefore = attrSet.getAttr(LAYOUT_WRAP_BEFORE).isPresent() && attrSet.getAttr(LAYOUT_WRAP_BEFORE).get().getBoolValue();
         }
 
         public LayoutConfig(LayoutConfig source) {

@@ -48,6 +48,8 @@ class FlexboxHelper {
 
     private static final long MEASURE_SPEC_WIDTH_MASK = 0xffffffffL;
 
+    private static final String INVALID_FLEX_DIRECTION = "Invalid flex direction: ";
+
     private final FlexContainer mFlexContainer;
 
     /**
@@ -987,7 +989,7 @@ class FlexboxHelper {
                         + mFlexContainer.getPaddingBottom();
                 break;
             default:
-                throw new IllegalArgumentException("Invalid flex direction: " + flexDirection);
+                throw new IllegalArgumentException(INVALID_FLEX_DIRECTION + flexDirection);
         }
 
         int flexLineIndex = 0;
@@ -1437,7 +1439,7 @@ class FlexboxHelper {
                 size = Component.EstimateSpec.getSize(widthMeasureSpec);
                 break;
             default:
-                throw new IllegalArgumentException("Invalid flex direction: " + flexDirection);
+                throw new IllegalArgumentException(INVALID_FLEX_DIRECTION + flexDirection);
         }
         List<FlexLine> flexLines = mFlexContainer.getFlexLinesInternal();
         if (mode == Component.EstimateSpec.PRECISE) {
@@ -1635,7 +1637,7 @@ class FlexboxHelper {
                             break;
                         default:
                             throw new IllegalArgumentException(
-                                    "Invalid flex direction: " + flexDirection);
+                                    INVALID_FLEX_DIRECTION + flexDirection);
                     }
                 }
             }
@@ -1654,7 +1656,7 @@ class FlexboxHelper {
                             break;
                         default:
                             throw new IllegalArgumentException(
-                                    "Invalid flex direction: " + flexDirection);
+                                    INVALID_FLEX_DIRECTION + flexDirection);
                     }
                 }
             }
