@@ -1,0 +1,68 @@
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "Flexbox layout"
+    },
+    {
+      "name": "mainability_description",
+      "value": "hap sample empty page"
+    },
+    {
+      "name": "must_be_non_negative_float",
+      "value": "Must be a non-negative float value"
+    },
+    {
+      "name": "must_be_non_negative_integer",
+      "value": "Must be a non-negative integer value"
+    },
+    {
+      "name": "must_be_minus_one_or_minus_two_or_non_negative_integer",
+      "value": "Must be -1 or -2 or a non-negative integer value"
+    },
+    {
+      "name": "must_be_integer",
+      "value": "Must be an integer value"
+    },
+    {
+      "name": "must_be_minus_one_or_non_negative_integer",
+      "value": "Must be -1 or a non-negative integer value"
+    },
+    {
+      "name": "invalid_values_exist",
+      "value": "Invalid values exist"
+    },
+    {
+      "name": "ok",
+      "value": "OK"
+    },
+    {
+      "name": "cancel",
+      "value": "Cancel"
+    },
+    {
+      "name": "order",
+      "value": "Order"
+    },
+    {
+      "name": "flex_grow",
+      "value": "Flex Grow"
+    },
+    {
+      "name": "flex_shrink",
+      "value": "Flex Shrink"
+    },
+    {
+      "name": "flex_basis_percent",
+      "value": "Flex Basis Percent"
+    },
+    {
+      "name": "width",
+      "value": "Width"
+    },
+    {
+      "name": "height",
+      "value": "Height"
+    }
+  ]
+}

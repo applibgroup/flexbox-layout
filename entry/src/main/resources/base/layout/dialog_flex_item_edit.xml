@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:bottom_margin="16vp"
+    ohos:end_margin="16vp"
+    ohos:start_margin="16vp"
+    ohos:top_margin="16vp">
+
+    <DirectionalLayout
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:orientation="vertical"
+        ohos:end_padding="16vp"
+        ohos:start_padding="16vp">
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="horizontal"
+            ohos:total_weight="2">
+
+            <DirectionalLayout
+                ohos:height="match_content"
+                ohos:width="0vp"
+                ohos:orientation="vertical"
+                ohos:weight="1">
+
+                <Text
+                    ohos:height="match_content"
+                    ohos:width="match_parent"
+                    ohos:text="Order"
+                    ohos:text_size="13fp"
+                    ohos:text_color="#A9A9A9"/>
+
+                <TextField
+                    ohos:id="$+id:edit_text_order"
+                    ohos:height="match_content"
+                    ohos:width="match_parent"
+                    ohos:hint="Order"
+                    ohos:max_text_lines="1"
+                    ohos:multiple_lines="true"
+                    ohos:text_size="15fp"
+                    ohos:text_color="#000000"
+                    ohos:text_input_type="pattern_number"/>
+            </DirectionalLayout>
+
+            <DirectionalLayout
+                ohos:height="match_content"
+                ohos:width="0vp"
+                ohos:orientation="vertical"
+                ohos:weight="1">
+
+                <Text
+                    ohos:height="match_content"
+                    ohos:width="match_parent"
+                    ohos:text="Flex Grow"
+                    ohos:text_size="13fp"
+                    ohos:text_color="#A9A9A9"/>
+
+                <TextField
+                    ohos:id="$+id:edit_text_flex_grow"
+                    ohos:height="match_content"
+                    ohos:width="match_parent"
+                    ohos:hint="Flex Grow"
+                    ohos:max_text_lines="1"
+                    ohos:multiple_lines="true"
+                    ohos:text_size="15fp"
+                    ohos:text_color="#000000"
+                    ohos:text_input_type="pattern_number"/>
+            </DirectionalLayout>
+        </DirectionalLayout>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="vertical"
+            ohos:top_margin="10vp">
+
+            <Text
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:text="Flex Shrink"
+                ohos:text_size="13fp"
+                ohos:text_color="#A9A9A9"/>
+
+            <TextField
+                ohos:id="$+id:edit_text_flex_shrink"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:hint="Flex Shrink"
+                ohos:max_text_lines="1"
+                ohos:multiple_lines="true"
+                ohos:text_size="15fp"
+                ohos:text_color="#000000"
+                ohos:text_input_type="pattern_number"/>
+        </DirectionalLayout>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="vertical"
+            ohos:top_margin="10vp">
+
+            <Text
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:text="Flex Basis Percent (-1: not set)"
+                ohos:text_size="13fp"
+                ohos:text_color="#A9A9A9"/>
+
+            <TextField
+                ohos:id="$+id:edit_text_flex_basis_percent"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:hint="Flex Basis Percent (-1: not set)"
+                ohos:max_text_lines="1"
+                ohos:multiple_lines="true"
+                ohos:text_size="15fp"
+                ohos:text_color="#000000"
+                ohos:text_input_type="pattern_number"/>
+        </DirectionalLayout>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="vertical"
+            ohos:top_margin="10vp">
+
+            <Text
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:text="Width (-1: match_parent, -2: match_content)"
+                ohos:text_size="13fp"
+                ohos:text_color="#A9A9A9"/>
+
+            <TextField
+                ohos:id="$+id:edit_text_width"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:hint="Width (-1: match_parent, -2: match_content)"
+                ohos:max_text_lines="1"
+                ohos:multiple_lines="true"
+                ohos:text_size="15fp"
+                ohos:text_color="#000000"
+                ohos:text_input_type="pattern_number"/>
+        </DirectionalLayout>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="vertical"
+            ohos:top_margin="10vp">
+
+            <Text
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:text="Height (-1: match_parent, -2: match_content)"
+                ohos:text_size="13fp"
+                ohos:text_color="#A9A9A9"/>
+
+            <TextField
+                ohos:id="$+id:edit_text_height"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:hint="Height (-1: match_parent, -2: match_content)"
+                ohos:max_text_lines="1"
+                ohos:multiple_lines="true"
+                ohos:text_size="15fp"
+                ohos:text_color="#000000"
+                ohos:text_input_type="pattern_number"/>
+        </DirectionalLayout>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="horizontal"
+            ohos:top_margin="10vp"
+            ohos:total_weight="2">
+
+            <DirectionalLayout
+                ohos:height="match_content"
+                ohos:width="0vp"
+                ohos:orientation="vertical"
+                ohos:weight="1">
+
+                <Text
+                    ohos:height="match_content"
+                    ohos:width="match_parent"
+                    ohos:text="Min Width"
+                    ohos:text_size="13fp"
+                    ohos:text_color="#A9A9A9"/>
+
+                <TextField
+                    ohos:id="$+id:edit_text_min_width"
+                    ohos:height="match_content"
+                    ohos:width="match_parent"
+                    ohos:hint="Min Width"
+                    ohos:max_text_lines="1"
+                    ohos:multiple_lines="true"
+                    ohos:text_size="15fp"
+                    ohos:text_color="#000000"
+                    ohos:text_input_type="pattern_number"/>
+            </DirectionalLayout>
+
+            <DirectionalLayout
+                ohos:height="match_content"
+                ohos:width="0vp"
+                ohos:orientation="vertical"
+                ohos:weight="1">
+
+                <Text
+                    ohos:height="match_content"
+                    ohos:width="match_parent"
+                    ohos:text="Min Height"
+                    ohos:text_size="13fp"
+                    ohos:text_color="#A9A9A9"/>
+
+                <TextField
+                    ohos:id="$+id:edit_text_min_height"
+                    ohos:height="match_content"
+                    ohos:width="match_parent"
+                    ohos:hint="Min Height"
+                    ohos:max_text_lines="1"
+                    ohos:multiple_lines="true"
+                    ohos:text_size="15fp"
+                    ohos:text_color="#000000"
+                    ohos:text_input_type="pattern_number"/>
+            </DirectionalLayout>
+        </DirectionalLayout>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="horizontal"
+            ohos:top_margin="10vp"
+            ohos:total_weight="2">
+
+            <DirectionalLayout
+                ohos:height="match_content"
+                ohos:width="0vp"
+                ohos:orientation="vertical"
+                ohos:weight="1">
+
+                <Text
+                    ohos:height="match_content"
+                    ohos:width="match_parent"
+                    ohos:text="Max Width"
+                    ohos:text_size="13fp"
+                    ohos:text_color="#A9A9A9"/>
+
+                <TextField
+                    ohos:id="$+id:edit_text_max_width"
+                    ohos:height="match_content"
+                    ohos:width="match_parent"
+                    ohos:hint="Max Width"
+                    ohos:max_text_lines="1"
+                    ohos:multiple_lines="true"
+                    ohos:text_size="15fp"
+                    ohos:text_color="#000000"
+                    ohos:text_input_type="pattern_number"/>
+            </DirectionalLayout>
+
+            <DirectionalLayout
+                ohos:height="match_content"
+                ohos:width="0vp"
+                ohos:orientation="vertical"
+                ohos:weight="1">
+
+                <Text
+                    ohos:height="match_content"
+                    ohos:width="match_parent"
+                    ohos:text="Max Height"
+                    ohos:text_size="13fp"
+                    ohos:text_color="#A9A9A9"/>
+
+                <TextField
+                    ohos:id="$+id:edit_text_max_height"
+                    ohos:height="match_content"
+                    ohos:width="match_parent"
+                    ohos:hint="Max Height"
+                    ohos:max_text_lines="1"
+                    ohos:multiple_lines="true"
+                    ohos:text_size="15fp"
+                    ohos:text_color="#000000"
+                    ohos:text_input_type="pattern_number"/>
+            </DirectionalLayout>
+        </DirectionalLayout>
+
+        <Checkbox
+            ohos:id="$+id:checkbox_wrap_before"
+            ohos:height="match_content"
+            ohos:width="130vp"
+            ohos:top_margin="10vp"
+            ohos:text_size="15fp"
+            ohos:text_color="#000000"
+            ohos:text="Wrap Before"/>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:orientation="horizontal"
+            ohos:top_margin="10vp">
+
+            <Text
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:text_size="15fp"
+                ohos:text_color="#000000"
+                ohos:text="Align self"/>
+
+            <Text
+                ohos:id="$+id:spinner_align_self"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:alignment="bottom"
+                ohos:left_margin="10vp"
+                ohos:text_size="15fp"
+                ohos:text_color="#000000"
+                ohos:weight="1vp"/>
+        </DirectionalLayout>
+
+        <DirectionalLayout
+            ohos:id="$+id:button_panel"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:bottom_padding="8vp"
+            ohos:total_weight="4"
+            ohos:orientation="horizontal"
+            ohos:top_padding="8vp">
+
+            <Component
+                ohos:id="$+id:spacer"
+                ohos:height="0vp"
+                ohos:width="0vp"
+                ohos:visibility="invisible"
+                ohos:weight="2"/>
+
+            <Button
+                ohos:id="$+id:button_cancel"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:text_size="15fp"
+                ohos:text_color="$color:colorAccent"
+                ohos:text="$string:cancel"/>
+
+            <Button
+                ohos:id="$+id:button_ok"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:left_margin="10vp"
+                ohos:text_size="15fp"
+                ohos:text_color="$color:colorAccent"
+                ohos:text="$string:ok"/>
+        </DirectionalLayout>
+    </DirectionalLayout>
+</ScrollView>

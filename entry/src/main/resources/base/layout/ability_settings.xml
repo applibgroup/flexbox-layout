@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:width="match_parent"
+    ohos:height="match_parent">
+
+    <DirectionalLayout
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:margin="15vp"
+        ohos:orientation="vertical">
+
+        <Text
+            ohos:id="$+id:text_title"
+            ohos:width="match_parent"
+            ohos:height="match_content"
+            ohos:text="Default values for new flex items"
+            ohos:padding="10vp"
+            ohos:text_size="14fp"
+            ohos:text_color="$color:colorAccent"/>
+
+        <Text
+            ohos:id="$+id:btn_order"
+            ohos:width="match_parent"
+            ohos:height="match_content"
+            ohos:text="Order"
+            ohos:padding="10vp"
+            ohos:text_size="16fp"
+            ohos:text_color="#000000"/>
+
+        <Text
+            ohos:id="$+id:btn_flex_grow"
+            ohos:width="match_parent"
+            ohos:height="match_content"
+            ohos:text="Flex Grow"
+            ohos:top_margin="15vp"
+            ohos:padding="10vp"
+            ohos:text_size="16fp"
+            ohos:text_color="#000000"/>
+
+        <Text
+            ohos:id="$+id:btn_flex_shrink"
+            ohos:width="match_parent"
+            ohos:height="match_content"
+            ohos:text="Flex Shrink"
+            ohos:top_margin="15vp"
+            ohos:padding="10vp"
+            ohos:text_size="16fp"
+            ohos:text_color="#000000"/>
+
+        <DirectionalLayout
+            ohos:id="$+id:btn_flex_basis"
+            ohos:width="match_parent"
+            ohos:height="match_content"
+            ohos:top_margin="15vp"
+            ohos:padding="10vp"
+            ohos:orientation="vertical">
+
+            <Text
+                ohos:id="$+id:flex_basis_title"
+                ohos:width="match_parent"
+                ohos:height="match_content"
+                ohos:text="Flex Basis Percent"
+                ohos:text_size="16fp"
+                ohos:text_color="#000000"/>
+
+            <Text
+                ohos:id="$+id:flex_basis_hint"
+                ohos:width="match_parent"
+                ohos:height="match_content"
+                ohos:text="(-1: not set)"
+                ohos:text_size="14fp"
+                ohos:text_color="#9C9C9C"/>
+        </DirectionalLayout>
+
+        <DirectionalLayout
+            ohos:id="$+id:btn_flex_width"
+            ohos:width="match_parent"
+            ohos:height="match_content"
+            ohos:top_margin="15vp"
+            ohos:padding="10vp"
+            ohos:orientation="vertical">
+
+            <Text
+                ohos:id="$+id:flex_width_title"
+                ohos:width="match_parent"
+                ohos:height="match_content"
+                ohos:text="Width"
+                ohos:text_size="16fp"
+                ohos:text_color="#000000"/>
+
+            <Text
+                ohos:id="$+id:flex_width_hint"
+                ohos:width="match_parent"
+                ohos:height="match_content"
+                ohos:text="(-1: match_parent, -2: match_content)"
+                ohos:text_size="14fp"
+                ohos:text_color="#9C9C9C"/>
+        </DirectionalLayout>
+
+        <DirectionalLayout
+            ohos:id="$+id:btn_flex_height"
+            ohos:width="match_parent"
+            ohos:height="match_content"
+            ohos:top_margin="15vp"
+            ohos:padding="10vp"
+            ohos:orientation="vertical">
+
+            <Text
+                ohos:id="$+id:flex_height_title"
+                ohos:width="match_parent"
+                ohos:height="match_content"
+                ohos:text="Height"
+                ohos:text_size="16fp"
+                ohos:text_color="#000000"/>
+
+            <Text
+                ohos:id="$+id:flex_height_hint"
+                ohos:width="match_parent"
+                ohos:height="match_content"
+                ohos:text="(-1: match_parent, -2: match_content)"
+                ohos:text_size="14fp"
+                ohos:text_color="#9C9C9C"/>
+        </DirectionalLayout>
+
+    </DirectionalLayout>
+</ScrollView>

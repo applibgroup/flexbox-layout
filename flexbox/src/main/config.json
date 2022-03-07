@@ -1,0 +1,27 @@
+{
+  "app": {
+    "bundleName": "com.example.harmony.flexbox",
+    "vendor": "google",
+    "version": {
+      "code": 1000000,
+      "name": "1.0"
+    },
+    "apiVersion": {
+      "compatible": 5,
+      "target": 5,
+      "releaseType": "Release"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.google.ohos.flexbox",
+    "deviceType": [
+      "phone"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "flexbox",
+      "moduleType": "har"
+    }
+  }
+}
